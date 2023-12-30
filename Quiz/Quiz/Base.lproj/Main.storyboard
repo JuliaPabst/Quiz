@@ -68,7 +68,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="adP-Sj-xLW" userLabel="False_View">
-                                        <rect key="frame" x="0.0" y="620" width="373" height="139"/>
+                                        <rect key="frame" x="0.0" y="620" width="373" height="89"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TqE-gR-y45">
                                                 <rect key="frame" x="10" y="20" width="353" height="80"/>
@@ -92,8 +92,27 @@
                                             <constraint firstItem="TqE-gR-y45" firstAttribute="top" secondItem="adP-Sj-xLW" secondAttribute="top" constant="20" id="hbl-iI-QgW"/>
                                         </constraints>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ovz-fH-hbR">
+                                        <rect key="frame" x="0.0" y="709" width="373" height="50"/>
+                                        <subviews>
+                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="rK5-gl-la9">
+                                                <rect key="frame" x="10" y="35" width="353" height="4"/>
+                                                <color key="tintColor" red="0.92778927089999996" green="0.50281387570000002" blue="0.65491092210000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </progressView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="rK5-gl-la9" firstAttribute="leading" secondItem="Ovz-fH-hbR" secondAttribute="leading" constant="10" id="W3j-R6-91C"/>
+                                            <constraint firstItem="rK5-gl-la9" firstAttribute="top" secondItem="Ovz-fH-hbR" secondAttribute="top" constant="35" id="eXk-ZD-p6b"/>
+                                            <constraint firstAttribute="trailing" secondItem="rK5-gl-la9" secondAttribute="trailing" constant="10" id="uQH-Za-VwX"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="Ovz-fH-hbR" firstAttribute="leading" secondItem="dco-nB-SMe" secondAttribute="leading" id="OQB-5E-1Sd"/>
+                                    <constraint firstItem="Ovz-fH-hbR" firstAttribute="top" secondItem="dco-nB-SMe" secondAttribute="top" constant="709" id="U8b-8c-4nS"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ovz-fH-hbR" secondAttribute="bottom" id="cdi-dk-pSU"/>
+                                    <constraint firstItem="Ovz-fH-hbR" firstAttribute="top" secondItem="adP-Sj-xLW" secondAttribute="bottom" id="d1J-Se-CXG"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ovz-fH-hbR" secondAttribute="trailing" id="pCL-Ux-Ntn"/>
                                     <constraint firstItem="TFW-bR-hMz" firstAttribute="top" secondItem="dco-nB-SMe" secondAttribute="top" constant="500" id="uhy-bk-ZIo"/>
                                 </constraints>
                             </stackView>
