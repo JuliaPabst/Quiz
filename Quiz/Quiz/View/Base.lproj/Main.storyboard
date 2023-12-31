@@ -173,11 +173,12 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="falseButton" destination="TqE-gR-y45" id="7IP-Rh-VUU"/>
+                        <outlet property="firstAnswer" destination="T43-t9-gcO" id="UPU-bh-MZJ"/>
                         <outlet property="progressBar" destination="rK5-gl-la9" id="m4T-wf-fKg"/>
                         <outlet property="questionLabel" destination="FEh-OI-MVW" id="TF0-ns-Afd"/>
-                        <outlet property="score" destination="Khs-ec-DKE" id="1Jr-2L-n74"/>
-                        <outlet property="trueButton" destination="T43-t9-gcO" id="UPU-bh-MZJ"/>
+                        <outlet property="score" destination="Khs-ec-DKE" id="KWt-1k-QoI"/>
+                        <outlet property="secondAnswer" destination="TqE-gR-y45" id="7IP-Rh-VUU"/>
+                        <outlet property="thirdAnswer" destination="K7O-4h-2U7" id="ou5-U3-PSy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

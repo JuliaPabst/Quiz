@@ -15,10 +15,11 @@ class ViewController: UIViewController {
     
     @IBOutlet var questionLabel: UILabel!
     @IBOutlet var progressBar: UIProgressView!
-    @IBOutlet var trueButton: UIButton!
-    @IBOutlet var falseButton: UIButton!
-    
+    @IBOutlet var firstAnswer: UIButton!
+    @IBOutlet var secondAnswer: UIButton!
+    @IBOutlet var thirdAnswer: UIButton!
     @IBOutlet var score: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,6 +52,9 @@ class ViewController: UIViewController {
     
     func updateUI (){
         questionLabel.text = quizBrain.getQuestionText()
+        firstAnswer.text = quizBrain.getFirstAnswer()
+        secondAnswer.text = quizBrain.getSecondAnswer()
+        thirdAnswer.text = quizBrain.getThirdAnswer()
         progressBar.progress = quizBrain.getProgress()
         
         score.text = "Score: \(quizBrain.getScore())"
