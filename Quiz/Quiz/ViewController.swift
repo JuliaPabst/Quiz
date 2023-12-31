@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    let questions: [Question] = [Question(text: "Question 1", answer: 1), Question(text: "Question 2", answer: 0), Question(text: "Question 3", answer: 1)]
+    let questions: [Question] = [Question(q: "Question 1", a: 1), Question(q: "Question 2", a: 0), Question(q: "Question 3", a: 1)]
     
     var currentQuestion = 0
     
