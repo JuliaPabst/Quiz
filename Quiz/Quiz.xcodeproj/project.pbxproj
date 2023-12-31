@@ -13,6 +13,7 @@
 		A31BFAA02B4038ED003A8B68 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A31BFA9E2B4038ED003A8B68 /* Main.storyboard */; };
 		A31BFAA22B4038EF003A8B68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A31BFAA12B4038EF003A8B68 /* Assets.xcassets */; };
 		A31BFAA52B4038EF003A8B68 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A31BFAA32B4038EF003A8B68 /* LaunchScreen.storyboard */; };
+		A3EB81B42B416FC000F6C69D /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EB81B32B416FC000F6C69D /* Question.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		A31BFAA12B4038EF003A8B68 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A31BFAA42B4038EF003A8B68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A31BFAA62B4038EF003A8B68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A3EB81B32B416FC000F6C69D /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		A31BFA972B4038ED003A8B68 /* Quiz */ = {
 			isa = PBXGroup;
 			children = (
+				A3EB81B32B416FC000F6C69D /* Question.swift */,
 				A31BFA982B4038ED003A8B68 /* AppDelegate.swift */,
 				A31BFA9A2B4038ED003A8B68 /* SceneDelegate.swift */,
 				A31BFA9C2B4038ED003A8B68 /* ViewController.swift */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A31BFA9D2B4038ED003A8B68 /* ViewController.swift in Sources */,
+				A3EB81B42B416FC000F6C69D /* Question.swift in Sources */,
 				A31BFA992B4038ED003A8B68 /* AppDelegate.swift in Sources */,
 				A31BFA9B2B4038ED003A8B68 /* SceneDelegate.swift in Sources */,
 			);
