@@ -31,6 +31,22 @@ struct QuizBrain {
         }
     }
     
+    func getQuestionText () -> String {
+        return questions[currentQuestion].text
+    }
+    
+    func getProgress() -> Float {
+        return Float(currentQuestion + 1) / Float(questions.count)
+    }
+    
+    func nextQuestion(){
+        if currentQuestion + 1 < questions.count {
+            currentQuestion += 1
+            updateUI()
+        } else {
+            currentQuestion = 0
+        }
+    }
 }
 
 

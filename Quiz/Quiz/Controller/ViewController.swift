@@ -31,7 +31,7 @@ class ViewController: UIViewController {
         let success = quizBrain.checkAnswer(userAnswer)
         
         
-        if success == true{
+        if success {
             sender.backgroundColor = UIColor.green
         } else {
             sender.backgroundColor = UIColor.red
@@ -48,17 +48,14 @@ class ViewController: UIViewController {
             
         }
         
-        if currentQuestion < questions.count - 1 {
-            currentQuestion += 1
-            updateUI()
-            
-        } 
+        quizBrain.nextQuestion()
+        
     }
     
     func updateUI (){
-        questionLabel.text = questions[currentQuestion].text
+        questionLabel.text = quizBrain.getQuestionText()
         
-        progressBar.progress = Float(currentQuestion + 1) / Float(questions.count)
+        progressBar.progress = quizBrain.getProgress()
        
     }
     
