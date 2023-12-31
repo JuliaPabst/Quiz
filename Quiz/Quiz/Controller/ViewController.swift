@@ -27,34 +27,36 @@ class ViewController: UIViewController {
     }
 
     @IBAction func answerButtonPressed(_ sender: UIButton) {
-        
-        let userAnswer = sender.tag
-        
-        let success = quizBrain.checkAnswer(userAnswer)
-        
-        
-        if success {
-            sender.backgroundColor = UIColor.green
-        } else {
-            sender.backgroundColor = UIColor.red
-        }
-        
-        sender.setTitleColor(sender.titleColor(for: .normal)?.withAlphaComponent(0.5), for: .normal)
-        
-        quizBrain.nextQuestion()
-        updateUI()
-        
-        UIView.animate(withDuration: 0.6) {
-            sender.setTitleColor(sender.titleColor(for: .normal)?.withAlphaComponent(1.0), for: .normal)
-            sender.backgroundColor = UIColor.clear
-        }
-    }
+           
+           let userAnswer = sender.tag
+           let success = quizBrain.checkAnswer(userAnswer)
+           
+           if success {
+               sender.backgroundColor = UIColor.green
+           } else {
+               sender.backgroundColor = UIColor.red
+           }
+           
+           UIView.animate(withDuration: 0.6, animations: {
+               sender.alpha = 0.5
+           }) { (finished) in
+               UIView.animate(withDuration: 0.2) {
+                   sender.alpha = 1.0
+                   sender.backgroundColor = UIColor.clear
+                   sender.tintColor = UIColor.clear
+               }
+           }
+           
+           quizBrain.nextQuestion()
+           
+           Timer.scheduledTimer(timeInterval: 0.8, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
+       }
     
-    func updateUI (){
+    @objc func updateUI (){
         questionLabel.text = quizBrain.getQuestionText()
-        firstAnswer.text = quizBrain.getFirstAnswer()
-        secondAnswer.text = quizBrain.getSecondAnswer()
-        thirdAnswer.text = quizBrain.getThirdAnswer()
+        firstAnswer.setTitle(quizBrain.getAnswer(0), for: .normal)
+        secondAnswer.setTitle(quizBrain.getAnswer(1), for: .normal)
+        thirdAnswer.setTitle(quizBrain.getAnswer(2), for: .normal)
         progressBar.progress = quizBrain.getProgress()
         
         score.text = "Score: \(quizBrain.getScore())"

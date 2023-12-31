@@ -24,7 +24,7 @@ struct QuizBrain {
     var currentScore = 0
     
     mutating func checkAnswer(_ userAnswer: Int) -> Bool{
-        let actualAnswer = questions[currentQuestion].answer
+        let actualAnswer = questions[currentQuestion].correctAnswer
         
         if userAnswer == actualAnswer{
             currentScore += 1
@@ -42,8 +42,9 @@ struct QuizBrain {
         return questions[currentQuestion].text
     }
     
-    func getFirstAnswer() -> String {
-        return questions[currentQuestion]["question"].a
+    func getAnswer(_ displayedAnswer: Int) -> String {
+        let currentAnswer = questions[currentQuestion].answer[displayedAnswer]
+        return currentAnswer
     }
     
     func getProgress() -> Float {
