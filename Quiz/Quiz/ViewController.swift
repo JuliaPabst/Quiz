@@ -37,14 +37,22 @@ class ViewController: UIViewController {
 
     @IBAction func answerButtonPressed(_ sender: UIButton) {
         
-        print(sender.tag)
-        sender.alpha = 0.5
+        if sender.tag == questions[currentQuestion].answer {
+            sender.backgroundColor = UIColor.green
+        } else {
+            print("Wrong!")
+            sender.backgroundColor = UIColor.red
+        }
+        
         sender.setTitleColor(sender.titleColor(for: .normal)?.withAlphaComponent(0.5), for: .normal)
 
       
         UIView.animate(withDuration: 0.6) {
-            sender.alpha = 1.0
+           
             sender.setTitleColor(sender.titleColor(for: .normal)?.withAlphaComponent(1.0), for: .normal)
+            sender.backgroundColor = UIColor.clear
+            
+            
         }
         
         if currentQuestion < questions.count - 1 {
@@ -58,6 +66,7 @@ class ViewController: UIViewController {
     
     func updateUI (){
         questionLabel.text = questions[currentQuestion].text
+       
     }
     
 }
