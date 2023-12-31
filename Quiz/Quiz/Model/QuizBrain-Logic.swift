@@ -20,15 +20,24 @@ struct QuizBrain {
                         Question(q: "The loudest sound produced by any animal is 188 decibels. That animal is the African Elephant.", a: 0),
                         Question(q: "No piece of square dry paper can be folded in half more than 7 times.", a: 0),
                         Question(q: "Chocolate affects a dog's heart and nervous system; a few ounces are enough to kill a small dog.", a: 1)]
+    
     var currentQuestion = 0
-    func checkAnswer(_ userAnswer: Int) -> Bool{
+    
+    var currentScore = 0
+    
+    mutating func checkAnswer(_ userAnswer: Int) -> Bool{
         let actualAnswer = questions[currentQuestion].answer
         
         if userAnswer == actualAnswer{
+            currentScore += 1
             return true
         } else {
             return false
         }
+    }
+    
+    func getScore() -> Int {
+        return currentScore
     }
     
     func getQuestionText () -> String {
@@ -39,12 +48,12 @@ struct QuizBrain {
         return Float(currentQuestion + 1) / Float(questions.count)
     }
     
-    func nextQuestion(){
+    mutating func nextQuestion(){
         if currentQuestion + 1 < questions.count {
             currentQuestion += 1
-            updateUI()
         } else {
             currentQuestion = 0
+            currentScore = 0
         }
     }
 }

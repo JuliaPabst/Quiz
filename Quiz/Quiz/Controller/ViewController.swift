@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     @IBOutlet var trueButton: UIButton!
     @IBOutlet var falseButton: UIButton!
     
+    @IBOutlet var score: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,25 +39,21 @@ class ViewController: UIViewController {
         }
         
         sender.setTitleColor(sender.titleColor(for: .normal)?.withAlphaComponent(0.5), for: .normal)
-
-      
-        UIView.animate(withDuration: 0.6) {
-           
-            sender.setTitleColor(sender.titleColor(for: .normal)?.withAlphaComponent(1.0), for: .normal)
-            sender.backgroundColor = UIColor.clear
-            
-            
-        }
         
         quizBrain.nextQuestion()
+        updateUI()
         
+        UIView.animate(withDuration: 0.6) {
+            sender.setTitleColor(sender.titleColor(for: .normal)?.withAlphaComponent(1.0), for: .normal)
+            sender.backgroundColor = UIColor.clear
+        }
     }
     
     func updateUI (){
         questionLabel.text = quizBrain.getQuestionText()
-        
         progressBar.progress = quizBrain.getProgress()
-       
+        
+        score.text = "Score: \(quizBrain.getScore())"
     }
     
 }
